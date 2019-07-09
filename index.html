@@ -153,87 +153,7 @@
 		<!-- Example row of columns -->
 		<div class="row">
 
-			<div class="col-md-3" style="padding-left: 1px; padding-right: 1px" id="entriesCon_div">
-				<h2>Summary of Conditions</h2>
-				<p><i>Click section listed below or on Map for detail display below the Map Legend</i></p>
-
-				<p id="txtFromToDate"></p>
-				<img id="loadingImg2" src="images/loading.gif" />
-				<div id="divLoadingUSGS"><i>Loading USGS Data...</i></div>
-				<table class="TableListJS" id="entries">
-					<thead>
-					</thead>
-					<tbody data-bind="foreach: {data: gageRecords}" style="font-size: 13px;">
-						<tr style="cursor:pointer;" data-bind="click: $root.selectThing ">
-							<td>
-								<div class="rTableBody">
-									<div class="rTableRow">
-										<div class="rTableCellFW">
-											Stream
-										</div>
-										<div class="rTableCell">
-											<span data-bind='text: StreamName'></span>
-										</div>
-									</div>
-									<div class="rTableRow">
-										<div class="rTableCellFW">
-											Section
-										</div>
-										<div class="rTableCell">
-											<span data-bind='text: SectionID'></span> <span data-bind='text: SiteName'></span>
-										</div>
-									</div>
-									<div class="rTableRow">
-										<div class="rTableCellFW">
-											Streamflow (cfs)
-										</div>
-										<div class="rTableCell">
-											<span data-bind='text: Discharge, attr: {title: formattedDischargeDateTime}'></span>        (3 day trend <img height="16px" data-bind="attr:{src: Day3CFSTrend}" />)
-										</div>
-									</div>
-
-									<div class="rTableRow">
-										<div class="rTableCellFW">
-											H2O Temp (F)
-										</div>
-										<div class="rTableCell">
-											<span data-bind='text: WaterTemp, attr: {title: formattedWaterTempDateTime}'></span>        (3 day trend <img height="16px" data-bind="attr:{src: Day3TMPTrend}" />)
-										</div>
-									</div>
-
-									<div class="rTableRow">
-										<div class="rTableCellFW">
-											Status
-										</div>
-										<div class="rTableCell">
-											<span data-bind='text: overallStatus'></span>
-										</div>
-									</div>
-								</div>
-							</td>
-							<td class="htmlRowNotDisplayed">
-								<div><span data-bind='text: strMONTHDAYEarlyFlowFromDroughtManagementTarget'></span></div>
-								<div><span data-bind='text: strMONTHDAYEarlyFlowToDroughtManagementTarget'></span></div>
-								<div><span data-bind='text: iLateFlowPref4ConsvValue'></span></div>
-								<div><span data-bind='text: iLateFlowConsvValue'></span></div>
-								<div><span data-bind='text: iLateFlowClosureValueFlow'></span></div>
-								<div><span data-bind='text: strLateFlowPref4ConsvValue'></span></div>
-								<div><span data-bind='text: strLateFlowConsvValue'></span></div>
-								<div><span data-bind='text: strLateFlowClosureValueFlow'></span></div>
-								<div><span data-bind='text: iTempClosureValue'></span></div>
-								<div><span data-bind='text: strTempCollected'></span></div>
-								<div><span data-bind='text: strSiteID'></span></div>
-								<div><span data-bind='text: strDailyStat_URL'></span></div>
-								<div><span data-bind='text: overallSymbol'></span></div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<p><i>* Indicates the reading (streamflow and/or temperature) for this USGS site is not collected.  To find out more information, click a stream section in the summary, next click the "USGS Source Data: Current" web link under "Stream Section Detail"</i></p>
-			</div>
-
-			<div class="col-md-9" style="padding-top:20px; padding-right: 1px;">
+			<div class="col-md-9 col-md-push-3" style="padding-top:20px; padding-right: 1px;">
 				<div id="mapDiv" style="z-index:5; width:98% !important;">
 					<img id="loadingImg" src="images/loading.gif" style="position:absolute; right:50%; top:50%; z-index:100;" />
 				</div>
@@ -367,6 +287,85 @@
 					<p><i>Note: Historic waterbody closures/restrictions listed include any historic spatial information that intersects the selected stream section.  The results can include adjacent stream closure/restriction (i.e. stream confluences).</i></p>
 
 				</div>
+			</div>
+	<div class="col-md-3 col-md-pull-9" style="padding-left: 1px; padding-right: 1px" id="entriesCon_div">
+				<h2>Summary of Conditions</h2>
+				<p><i>Click section listed below or on Map for detail display below the Map Legend</i></p>
+
+				<p id="txtFromToDate"></p>
+				<img id="loadingImg2" src="images/loading.gif" />
+				<div id="divLoadingUSGS"><i>Loading USGS Data...</i></div>
+				<table class="TableListJS" id="entries">
+					<thead>
+					</thead>
+					<tbody data-bind="foreach: {data: gageRecords}" style="font-size: 13px;">
+						<tr style="cursor:pointer;" data-bind="click: $root.selectThing ">
+							<td>
+								<div class="rTableBody">
+									<div class="rTableRow">
+										<div class="rTableCellFW">
+											Stream
+										</div>
+										<div class="rTableCell">
+											<span data-bind='text: StreamName'></span>
+										</div>
+									</div>
+									<div class="rTableRow">
+										<div class="rTableCellFW">
+											Section
+										</div>
+										<div class="rTableCell">
+											<span data-bind='text: SectionID'></span> <span data-bind='text: SiteName'></span>
+										</div>
+									</div>
+									<div class="rTableRow">
+										<div class="rTableCellFW">
+											Streamflow (cfs)
+										</div>
+										<div class="rTableCell">
+											<span data-bind='text: Discharge, attr: {title: formattedDischargeDateTime}'></span>        (3 day trend <img height="16px" data-bind="attr:{src: Day3CFSTrend}" />)
+										</div>
+									</div>
+
+									<div class="rTableRow">
+										<div class="rTableCellFW">
+											H2O Temp (F)
+										</div>
+										<div class="rTableCell">
+											<span data-bind='text: WaterTemp, attr: {title: formattedWaterTempDateTime}'></span>        (3 day trend <img height="16px" data-bind="attr:{src: Day3TMPTrend}" />)
+										</div>
+									</div>
+
+									<div class="rTableRow">
+										<div class="rTableCellFW">
+											Status
+										</div>
+										<div class="rTableCell">
+											<span data-bind='text: overallStatus'></span>
+										</div>
+									</div>
+								</div>
+							</td>
+							<td class="htmlRowNotDisplayed">
+								<div><span data-bind='text: strMONTHDAYEarlyFlowFromDroughtManagementTarget'></span></div>
+								<div><span data-bind='text: strMONTHDAYEarlyFlowToDroughtManagementTarget'></span></div>
+								<div><span data-bind='text: iLateFlowPref4ConsvValue'></span></div>
+								<div><span data-bind='text: iLateFlowConsvValue'></span></div>
+								<div><span data-bind='text: iLateFlowClosureValueFlow'></span></div>
+								<div><span data-bind='text: strLateFlowPref4ConsvValue'></span></div>
+								<div><span data-bind='text: strLateFlowConsvValue'></span></div>
+								<div><span data-bind='text: strLateFlowClosureValueFlow'></span></div>
+								<div><span data-bind='text: iTempClosureValue'></span></div>
+								<div><span data-bind='text: strTempCollected'></span></div>
+								<div><span data-bind='text: strSiteID'></span></div>
+								<div><span data-bind='text: strDailyStat_URL'></span></div>
+								<div><span data-bind='text: overallSymbol'></span></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p><i>* Indicates the reading (streamflow and/or temperature) for this USGS site is not collected.  To find out more information, click a stream section in the summary, next click the "USGS Source Data: Current" web link under "Stream Section Detail"</i></p>
 			</div>
 		</div>
 
